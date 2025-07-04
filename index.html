@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sneha AGW Designs</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Licorice&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Jost', sans-serif;
+            background-color: #f8f9fa;
+            color: #2A2043;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        header {
+            padding: 40px 50px 20px 50px;
+            position: relative;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            flex: 0 0 auto;
+        }
+        
+        .logo img {
+            width: 280px;
+            height: 140px;
+            object-fit: contain;
+        }
+        
+        .top-right {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            text-align: right;
+        }
+        
+        .designs-text {
+            font-family: 'Licorice', cursive;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 1.2;
+            text-align: right;
+            color: #AE9EE9;
+            margin-bottom: 10px;
+        }
+        
+        .orange-flower {
+            align-self: flex-end;
+        }
+        
+        .orange-flower img {
+            width: 26px;
+            height: 26px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            gap: 60px;
+            margin-left: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #2A2043;
+            font-weight: 700;
+            font-size: 18px;
+            font-family: 'Jost', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #9B59B6;
+        }
+        
+        /* Main Content */
+        main {
+            background-color: #f8f9fa;
+            padding: 80px 50px 60px 50px;
+            text-align: center;
+            min-height: calc(100vh - 200px);
+        }
+        
+        .welcome-section {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .welcome-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .paper-plane img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+        
+        .welcome-text h1 {
+            font-family: 'Jost', sans-serif;
+            font-style: normal;
+            font-weight: 900;
+            font-size: 74px;
+            line-height: 0.9;
+            text-align: center;
+            letter-spacing: -0.08em;
+            color: #2F295A;
+            margin: 0;
+        }
+        
+        .brand-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0 40px 0;
+        }
+        
+        .brand-bg {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .brand-bg img {
+            width: 800px;
+            height: auto;
+            max-width: 100%;
+        }
+        
+        .brand-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            height: 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .brand-text img {
+            width: 100%;
+            height: auto;
+            max-width: 700px;
+            object-fit: contain;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            font-weight: 900;
+            color: #2A2043;
+            margin: 30px 0 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 60px;
+            margin-top: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            font-size: 14px;
+            color: #9B59B6;
+            font-weight: 500;
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .feature-icon {
+            margin-right: 10px;
+            font-size: 16px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            header {
+                padding: 30px 30px 20px 30px;
+            }
+            
+            .logo img {
+                width: 240px;
+                height: 120px;
+            }
+            
+            .designs-text {
+                font-size: 28px;
+            }
+            
+            nav {
+                gap: 40px;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+            
+            .welcome-text h1 {
+                font-size: 60px;
+            }
+            
+            .brand-bg img {
+                width: 700px;
+            }
+            
+            .paper-plane img {
+                width: 70px;
+                height: 70px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 20px 20px 15px 20px;
+            }
+            
+            .top-section {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .top-right {
+                align-items: center;
+                text-align: center;
+            }
+            
+            .logo img {
+                width: 200px;
+                height: 100px;
+            }
+            
+            .designs-text {
+                font-size: 24px;
+                text-align: center;
+            }
+            
+            nav {
+                gap: 30px;
+                justify-content: center;
+            }
+            
+            nav a {
+                font-size: 16px;
+            }
+            
+            main {
+                padding: 40px 20px;
+            }
+            
+            .welcome-text {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .welcome-text h1 {
+                font-size: 48px;
+            }
+            
+            .brand-bg img {
+                width: 100%;
+                max-width: 500px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                max-width: 400px;
+            }
+            
+            .tagline {
+                font-size: 14px;
+            }
+            
+            .paper-plane img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .welcome-text h1 {
+                font-size: 36px;
+            }
+            
+            .brand-bg img {
+                max-width: 400px;
+            }
+            
+            .tagline {
+                font-size: 12px;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="top-section">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Sneha AGW Designs Logo">
+                </div>
+                
+                <div class="top-right">
+                    <span class="designs-text">designs that speaks</span>
+                    <div class="orange-flower">
+                        <img src="images/smallorangeflower.png" alt="Orange Flower">
+                    </div>
+                </div>
+            </div>
+            
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="welcome-section">
+            <div class="welcome-text">
+                <div class="paper-plane">
+                    <img src="images/plane.png" alt="Paper Plane">
+                </div>
+                <h1>Welcome to</h1>
+            </div>
+            
+            <div class="brand-container">
+                <div class="brand-bg">
+                    <img src="images/textbg.png" alt="Background">
+                    <div class="brand-text">
+                        <img src="images/text.png" alt="Sneha AGW Designs">
+                    </div>
+                </div>
+            </div>
+            
+            <p class="tagline">Designing purposeful brands with a pop of personality.</p>
+            
+            <div class="features">
+                <div class="feature-item">
+                    <span class="feature-icon">🌈</span>
+                    <span>Purpose-driven, not just pretty</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">✨</span>
+                    <span>A brand that feels like you</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">🤝</span>
+                    <span>Collaborative & custom</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-icon">💡</span>
+                    <span>Big ideas for all brands</span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
