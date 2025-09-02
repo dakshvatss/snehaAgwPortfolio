@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,7 +67,7 @@
 
         .orange-flower img {
             width: 20px;
-            height: 20px; 
+            height: 20px;
         }
 
         /* Welcome to */
@@ -275,12 +274,12 @@
         /* Slanting purple strip */
         .purple-strip {
             position: absolute;
-            width: 2000px;
-            height: 50px;
-            left: -200px;
-            top: 800px;
+            width: 2500px;
+            height: 80px;
+            left: -400px;
+            top: 730px;
             background: #AE9EE9;
-            transform: rotate(-3.1deg);
+            transform: rotate(5deg);
             transform-origin: center;
             overflow: hidden;
             z-index: 1;
@@ -289,19 +288,19 @@
         /* Moving text container */
         .moving-text-container {
             position: absolute;
-            width: 2000px;
-            height: 50px;
-            left: -200px;
-            top: 800px;
+            width: 2500px;
+            height: 80px;
+            left: -400px;
+            top: 730px;
             overflow: hidden;
-            transform: rotate(-3.1deg);
+            transform: rotate(5deg);
             transform-origin: center;
             z-index: 2;
         }
 
         .moving-text {
             position: absolute;
-            width: 300vw;
+            width: 400vw;
             height: 50px;
             top: 0;
             font-family: 'Jost';
@@ -309,11 +308,11 @@
             font-weight: 900;
             font-size: 26px;
             line-height: 50px;
-            text-align: center;
+            text-align: left;
             letter-spacing: 0.1em;
             color: #2F295A;
             white-space: nowrap;
-            animation: moveText 25s linear infinite;
+            animation: moveText 20s linear infinite;
             display: flex;
             align-items: center;
         }
@@ -333,17 +332,137 @@
             width: 129px;
             height: 1775px;
             left: -47px;
-            top: 1820px;
+            top: 1740px;
             background: #F1AFFF;
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
             z-index: 1;
+        }
+
+        /* Why work together section with split background */
+        .why-work-section {
+            position: absolute;
+            width: 100%;
+            top: 820px;
+            left: 0;
+            height: 600px;
+            background: linear-gradient(90deg, #94D3CD 50%, #2F295A 50%);
+            z-index: 2;
+        }
+
+        .why-work-title {
+            position: absolute;
+            width: 355px;
+            height: 108px;
+            left: calc(50% - 355px/2 - 332.5px);
+            top: 124px;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 54px;
+            line-height: 54px;
+            text-align: center;
+            letter-spacing: -0.08em;
+            color: #2F295A;
+        }
+
+        .brand-together-title {
+            position: absolute;
+            width: 468px;
+            height: 117px;
+            left: calc(50% - 468px/2 - 333px);
+            top: 253px;
+            font-family: 'Licorice';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 95px;
+            line-height: 62px;
+            text-align: center;
+            color: #2F295A;
+        }
+
+        .why-work-description {
+            position: absolute;
+            width: 438px;
+            height: 240px;
+            left: calc(50% - 438px/2 - 322px);
+            top: 358px;
+            font-family: 'Jost';
+            font-style: italic;
+            font-weight: 600;
+            font-size: 21px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        /* Projects section - Updated to fill screen with 2 columns and 4 rows */
+        .projects-section {
+            position: absolute;
+            width: 100vw;
+            top: 1420px;
+            left: 0;
+            background-color: #f5f5f5;
+        }
+
+        .purple-line {
+            width: 100%;
+            height: 4px;
+            background-color: #AE9EE9;
+            border-radius: 2px;
+        }
+
+        .projects-title {
+            position: absolute;
+            width: 100%;
+            height: 72px;
+            top: 20px;
+            left: 0;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 44px;
+            line-height: 72px;
+            text-align: center;
+            letter-spacing: -0.08em;
+            text-transform: uppercase;
+            color: #2F295A;
+            z-index: 10;
+            background-color: #f5f5f5;
+            padding: 20px 0;
+        }
+
+        .projects-grid {
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 0;
+            position: absolute;
+            top: 112px;
+            left: 0;
+            height: calc(100vw);
+        }
+
+        .project-item {
+            width: 50vw;
+            height: 25vw;
+            overflow: hidden;
+        }
+
+        .project-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
 
         /* Services section */
         .services-section {
             position: absolute;
             width: 100%;
-            top: 1200px;
+            top: calc(1420px + 112px + 100vw);
             left: 0;
             background: linear-gradient(180deg, #F1AFFF 0%, #AE9EE9 100%);
             min-height: 600px;
@@ -453,10 +572,10 @@
             font-weight: bold;
         }
 
-        /* Update container height to accommodate services section */
+        /* Update container height to accommodate new layout */
         .container {
             position: relative;
-            min-height: 1900px;
+            min-height: calc(3020px + 100vw);
         }
 
         /* Media queries for different laptop sizes */
@@ -533,11 +652,47 @@
             }
 
             .container {
-                min-height: 1700px;
+                min-height: calc(2620px + 100vh * 1.5);
+            }
+
+            .why-work-section {
+                top: 770px;
+                min-height: 550px;
+            }
+
+            .why-work-title {
+                font-size: 48px;
+                width: 320px;
+                left: calc(50% - 320px/2 - 290px);
+                top: 110px;
+            }
+
+            .brand-together-title {
+                font-size: 85px;
+                width: 420px;
+                left: calc(50% - 420px/2 - 290px);
+                top: 220px;
+            }
+
+            .why-work-description {
+                font-size: 19px;
+                width: 390px;
+                left: calc(50% - 390px/2 - 280px);
+                top: 320px;
+                line-height: 22px;
+            }
+
+            .projects-section {
+                top: 1320px;
+            }
+
+            .projects-grid {
+                height: calc(100vh * 1.3);
+                top: 112px;
             }
 
             .services-section {
-                top: 1000px;
+                top: calc(1320px + 112px + 100vh * 1.3);
                 min-height: 550px;
             }
 
@@ -560,21 +715,28 @@
                 max-width: 350px;
             }
 
+            .services-title {
+                font-size: 42px;
+                top: 80px;
+            }
+
             .pink-strip {
-                top: 1620px;
+                top: calc(2040px + 100vh * 1.3);
                 height: 1500px;
             }
 
             .purple-strip {
-                width: 1500px;
-                left: -80px;
-                top: 750px;
+                width: 2000px;
+                height: 70px;
+                left: -300px;
+                top: 680px;
             }
 
             .moving-text-container {
-                width: 1500px;
-                left: -80px;
-                top: 750px;
+                width: 2000px;
+                height: 70px;
+                left: -300px;
+                top: 680px;
             }
 
             .moving-text {
@@ -617,23 +779,61 @@
             }
 
             .purple-strip {
-                width: 1400px;
-                left: -60px;
-                top: 730px;
+                width: 1800px;
+                height: 70px;
+                left: -250px;
+                top: 660px;
             }
 
             .moving-text-container {
-                width: 1400px;
-                left: -60px;
-                top: 730px;
+                width: 1800px;
+                height: 70px;
+                left: -250px;
+                top: 660px;
             }
 
             .moving-text {
                 font-size: 20px;
             }
 
+            .why-work-section {
+                top: 720px;
+                min-height: 500px;
+            }
+
+            .why-work-title {
+                font-size: 42px;
+                width: 300px;
+                left: calc(50% - 300px/2 - 250px);
+                top: 100px;
+            }
+
+            .brand-together-title {
+                font-size: 75px;
+                width: 380px;
+                left: calc(50% - 380px/2 - 250px);
+                top: 200px;
+            }
+
+            .why-work-description {
+                font-size: 17px;
+                width: 360px;
+                left: calc(50% - 360px/2 - 240px);
+                top: 300px;
+                line-height: 20px;
+            }
+
+            .projects-section {
+                top: 1220px;
+            }
+
+            .projects-grid {
+                height: calc(100vh * 1.2);
+                top: 112px;
+            }
+
             .services-section {
-                top: 950px;
+                top: calc(1220px + 112px + 100vh * 1.2);
                 min-height: 500px;
             }
 
@@ -662,8 +862,31 @@
             }
 
             .pink-strip {
-                top: 1520px;
+                top: calc(1920px + 100vh * 1.2);
                 height: 1300px;
+            }
+        }
+
+        /* Mobile responsive adjustments */
+        @media (max-width: 968px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+                height: calc(100vh * 2);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-title {
+                font-size: 32px;
+                line-height: 48px;
+                width: auto;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(8, 1fr);
+                height: calc(100vh * 2.5);
             }
         }
     </style>
@@ -734,52 +957,54 @@
 
         <div class="moving-text-container">
             <div class="moving-text">
-                your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. •
+                your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. •
             </div>
         </div>
 
         <!-- Pink vertical strip -->
-        <div class="pink-strip"></div>
+        <!-- <div class="pink-strip"></div> -->
 
-        <!-- Services section -->
-        <section id="services" class="services-section">
-            <div class="sun-icon">
-                <img src="images/sun.png" alt="Sun">
-            </div>
-            <h2 class="services-title">SERVICES</h2>
+        <!-- Why work together section with split background -->
+        <section class="why-work-section">
+            <h2 class="why-work-title">Why we should work on your</h2>
+            <h3 class="brand-together-title">brand together</h3>
+            <p class="why-work-description">I help multi-passionate entrepreneurs, creatives, and small business dreamers craft unforgettable brand identities, packaging and their website that connect, convert, and stand out with soul. Ready to build a brand that feels like home—and turns heads while doing it? Your brand deserves to speak your language, reflect your values, and attract the kind of clients who just get you.</p>
+        </section>
+        
+        <section class="projects-section">
+            <div class="purple-line"></div>
             
-            <div class="services-container">
-                <div class="service-card">
-                    <h3 class="service-title">BRANDING</h3>
-                    <p class="service-description">Perfect for businesses on a smaller budget looking to establish a cohesive brand identity quickly.</p>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Package Includes</span>
-                            <span class="detail-arrow">›</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">why you need it?</span>
-                            <span class="detail-arrow">›</span>
-                        </div>
-                    </div>
+            <h2 class="projects-title">Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-item">
+                    <img src="images/project1.png" alt="Project 1">
                 </div>
-
-                <div class="service-card">
-                    <h3 class="service-title">BRANDING</h3>
-                    <p class="service-description">Perfect for businesses on a smaller budget looking to establish a cohesive brand identity quickly.</p>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Package Includes</span>
-                            <span class="detail-arrow">›</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">why you need it?</span>
-                            <span class="detail-arrow">›</span>
-                        </div>
-                    </div>
+                <div class="project-item">
+                    <img src="images/project2.png" alt="Project 2">
+                </div>
+                <div class="project-item">
+                    <img src="images/project3.png" alt="Project 3">
+                </div>
+                <div class="project-item">
+                    <img src="images/project4.png" alt="Project 4">
+                </div>
+                <div class="project-item">
+                    <img src="images/project5.png" alt="Project 5">
+                </div>
+                <div class="project-item">
+                    <img src="images/project6.png" alt="Project 6">
+                </div>
+                <div class="project-item">
+                    <img src="images/project7.png" alt="Project 7">
+                </div>
+                <div class="project-item">
+                    <img src="images/project8.png" alt="Project 8">
                 </div>
             </div>
         </section>
+
+
     </div>
 </body>
 </html>
