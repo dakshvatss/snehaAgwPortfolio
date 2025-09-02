@@ -35,7 +35,7 @@
             width: 280px;
             height: 140px;
             left: 100px;
-            top: 80px;
+            top: 40px;
         }
 
         .logo img {
@@ -50,7 +50,7 @@
             width: 200px;
             height: 25px;
             right: 80px;
-            top: 120px;
+            top: 80px;
 
             font-family: 'Licorice';
             font-style: normal;
@@ -63,9 +63,8 @@
 
         .orange-flower {
             position: absolute;
-            top: -10px;
-            right: -25px;
-        }
+            top: -30px;
+            right: -1px;}
 
         .orange-flower img {
             width: 20px;
@@ -78,7 +77,7 @@
             width: 350px;
             height: 70px;
             left: calc(50% - 350px/2);
-            top: 320px;
+            top: 340px;
 
             font-family: 'Jost';
             font-style: normal;
@@ -95,10 +94,9 @@
             position: absolute;
             width: 150px;
             height: 153px;
-            left: calc(50% - 300px);
-            top: 250px;
+            left: calc(50% - 350px);
+            top: 280px;
             border-radius: 4000px;
-            transform: rotate(21.75deg);
         }
 
         .paper-plane img {
@@ -141,9 +139,9 @@
         nav {
             position: absolute;
             right: 80px;
-            top: 170px;
+            top: 150px;
             display: flex;
-            gap: 30px;
+            gap: 40px;
             align-items: center;
         }
 
@@ -175,11 +173,11 @@
             width: 832px;
             height: 45px;
             left: calc(50% - 832px/2);
-            top: 520px;
+            top: 500px;
             font-family: 'Jost';
             font-style: italic;
             font-weight: 600;
-            font-size: 26px;
+            font-size: 18px;
             line-height: 37px;
             text-align: center;
             text-transform: uppercase;
@@ -190,12 +188,12 @@
             position: absolute;
             width: 800px;
             height: 80px;
-            left: calc(50% - 400px);
-            top: 590px;
+            left: calc(50% - 350px);
+            top: 560px;
             font-family: 'Jost';
             font-style: italic;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 15px;
             line-height: 30px;
             text-align: center;
             text-transform: uppercase;
@@ -219,7 +217,7 @@
 
         .cta-button {
             position: absolute;
-            top: 700px;
+            top: 670px;
             left: 50%;
             transform: translateX(-50%);
             box-sizing: border-box;
@@ -252,13 +250,14 @@
             width: 192px;
             height: 192px;
             left: 1200px;
-            top: 750px;
+            top: 600px;
             background: #94D3CD;
             border: 3px solid #FFFFFF;
             border-radius: 4000px;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 10;
         }
 
         .compass img {
@@ -271,6 +270,193 @@
         .container {
             position: relative;
             min-height: 900px;
+        }
+
+        /* Slanting purple strip */
+        .purple-strip {
+            position: absolute;
+            width: 2000px;
+            height: 50px;
+            left: -200px;
+            top: 800px;
+            background: #AE9EE9;
+            transform: rotate(-3.1deg);
+            transform-origin: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        /* Moving text container */
+        .moving-text-container {
+            position: absolute;
+            width: 2000px;
+            height: 50px;
+            left: -200px;
+            top: 800px;
+            overflow: hidden;
+            transform: rotate(-3.1deg);
+            transform-origin: center;
+            z-index: 2;
+        }
+
+        .moving-text {
+            position: absolute;
+            width: 300vw;
+            height: 50px;
+            top: 0;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 26px;
+            line-height: 50px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            color: #2F295A;
+            white-space: nowrap;
+            animation: moveText 25s linear infinite;
+            display: flex;
+            align-items: center;
+        }
+
+        @keyframes moveText {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Pink vertical strip */
+        .pink-strip {
+            position: absolute;
+            width: 129px;
+            height: 1775px;
+            left: -47px;
+            top: 1820px;
+            background: #F1AFFF;
+            transform: rotate(-90deg);
+            z-index: 1;
+        }
+
+        /* Services section */
+        .services-section {
+            position: absolute;
+            width: 100%;
+            top: 1200px;
+            left: 0;
+            background: linear-gradient(180deg, #F1AFFF 0%, #AE9EE9 100%);
+            min-height: 600px;
+            padding: 60px 0;
+        }
+
+        .sun-icon {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 20px;
+        }
+
+        .sun-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .services-title {
+            position: absolute;
+            width: 100%;
+            top: 100px;
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 48px;
+            line-height: 55px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            color: #2F295A;
+        }
+
+        .services-container {
+            position: absolute;
+            width: 1438px;
+            height: 312px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(174, 158, 233, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            height: 140px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .service-title {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 40px;
+            color: #2F295A;
+            margin: 0;
+        }
+
+        .service-description {
+            font-family: 'Jost';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #2F295A;
+            margin: 10px 0 0 0;
+            max-width: 400px;
+        }
+
+        .service-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 200px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(174, 158, 233, 0.3);
+        }
+
+        .detail-label {
+            font-family: 'Jost';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            color: #2F295A;
+        }
+
+        .detail-arrow {
+            font-size: 18px;
+            color: #AE9EE9;
+            font-weight: bold;
+        }
+
+        /* Update container height to accommodate services section */
+        .container {
+            position: relative;
+            min-height: 1900px;
         }
 
         /* Media queries for different laptop sizes */
@@ -347,7 +533,52 @@
             }
 
             .container {
-                min-height: 850px;
+                min-height: 1700px;
+            }
+
+            .services-section {
+                top: 1000px;
+                min-height: 550px;
+            }
+
+            .services-container {
+                width: 1200px;
+                top: 180px;
+            }
+
+            .service-card {
+                height: 120px;
+                padding: 25px;
+            }
+
+            .service-title {
+                font-size: 32px;
+            }
+
+            .service-description {
+                font-size: 15px;
+                max-width: 350px;
+            }
+
+            .pink-strip {
+                top: 1620px;
+                height: 1500px;
+            }
+
+            .purple-strip {
+                width: 1500px;
+                left: -80px;
+                top: 750px;
+            }
+
+            .moving-text-container {
+                width: 1500px;
+                left: -80px;
+                top: 750px;
+            }
+
+            .moving-text {
+                font-size: 22px;
             }
         }
 
@@ -383,6 +614,56 @@
                 width: 100px;
                 height: 56px;
                 line-height: 56px;
+            }
+
+            .purple-strip {
+                width: 1400px;
+                left: -60px;
+                top: 730px;
+            }
+
+            .moving-text-container {
+                width: 1400px;
+                left: -60px;
+                top: 730px;
+            }
+
+            .moving-text {
+                font-size: 20px;
+            }
+
+            .services-section {
+                top: 950px;
+                min-height: 500px;
+            }
+
+            .services-container {
+                width: 1000px;
+                top: 160px;
+            }
+
+            .service-card {
+                height: 110px;
+                padding: 20px;
+            }
+
+            .service-title {
+                font-size: 28px;
+            }
+
+            .service-description {
+                font-size: 14px;
+                max-width: 300px;
+            }
+
+            .services-title {
+                font-size: 42px;
+                top: 80px;
+            }
+
+            .pink-strip {
+                top: 1520px;
+                height: 1300px;
             }
         }
     </style>
@@ -448,6 +729,57 @@
         <div class="compass">
             <img src="images/compass.png" alt="Compass">
         </div>
+
+        <div class="purple-strip"></div>
+
+        <div class="moving-text-container">
+            <div class="moving-text">
+                your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. •
+            </div>
+        </div>
+
+        <!-- Pink vertical strip -->
+        <div class="pink-strip"></div>
+
+        <!-- Services section -->
+        <section id="services" class="services-section">
+            <div class="sun-icon">
+                <img src="images/sun.png" alt="Sun">
+            </div>
+            <h2 class="services-title">SERVICES</h2>
+            
+            <div class="services-container">
+                <div class="service-card">
+                    <h3 class="service-title">BRANDING</h3>
+                    <p class="service-description">Perfect for businesses on a smaller budget looking to establish a cohesive brand identity quickly.</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Package Includes</span>
+                            <span class="detail-arrow">›</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">why you need it?</span>
+                            <span class="detail-arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <h3 class="service-title">BRANDING</h3>
+                    <p class="service-description">Perfect for businesses on a smaller budget looking to establish a cohesive brand identity quickly.</p>
+                    <div class="service-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Package Includes</span>
+                            <span class="detail-arrow">›</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">why you need it?</span>
+                            <span class="detail-arrow">›</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>
