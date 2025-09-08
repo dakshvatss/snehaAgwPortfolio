@@ -32,10 +32,10 @@
         /* Logo */
         .logo {
             position: absolute;
-            width: 280px;
-            height: 140px;
-            left: 100px;
-            top: 40px;
+            width: 15rem;
+            height: 8rem;
+            left: 5rem;
+            top: 3rem;
         }
 
         .logo img {
@@ -247,13 +247,13 @@
         .compass {
             box-sizing: border-box;
             position: absolute;
-            width: 192px;
-            height: 192px;
-            left: 1200px;
-            top: 600px;
+            width: 10rem;
+            height: 10rem;
+            left: 100rem;
+            top: 48rem;
             background: #94D3CD;
-            border: 3px solid #FFFFFF;
-            border-radius: 4000px;
+            border: 0.3rem solid #FFFFFF;
+            border-radius: 200rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -261,8 +261,8 @@
         }
 
         .compass img {
-            width: 120px;
-            height: 120px;
+            width: 8rem;
+            height: 8rem;
             object-fit: contain;
         }
 
@@ -275,12 +275,12 @@
         /* Slanting purple strip */
         .purple-strip {
             position: absolute;
-            width: 2500px;
-            height: 80px;
-            left: -400px;
-            top: 730px;
+            width: 250rem;
+            height: 4rem;
+            left: -40rem;
+            top: 54rem;
             background: #AE9EE9;
-            transform: rotate(5deg);
+            transform: rotate(4deg);
             transform-origin: center;
             overflow: hidden;
             z-index: 1;
@@ -289,41 +289,41 @@
         /* Moving text container */
         .moving-text-container {
             position: absolute;
-            width: 2500px;
-            height: 80px;
-            left: -400px;
-            top: 730px;
+            width: 250rem;
+            height: 4rem;
+            left: -40rem;
+            top: 54rem;
             overflow: hidden;
-            transform: rotate(5deg);
+            transform: rotate(4deg);
             transform-origin: center;
             z-index: 2;
         }
 
         .moving-text {
             position: absolute;
-            width: 400vw;
-            height: 50px;
+            width: max-content;   /* auto size instead of fixed vw */
+            height: 4rem;
             top: 0;
             font-family: 'Jost';
             font-style: normal;
             font-weight: 900;
-            font-size: 26px;
-            line-height: 50px;
+            font-size: 1.6rem;
+            line-height: .5rem;
             text-align: left;
             letter-spacing: 0.1em;
             color: #2F295A;
             white-space: nowrap;
-            animation: moveText 20s linear infinite;
             display: flex;
             align-items: center;
+            animation: moveText 30s linear infinite; 
         }
 
         @keyframes moveText {
-            0% {
-                transform: translateX(100%);
+            from {
+                transform: translateX(0);
             }
-            100% {
-                transform: translateX(-100%);
+            to {
+                transform: translateX(-50%);
             }
         }
 
@@ -343,11 +343,12 @@
         .why-work-section {
             position: absolute;
             width: 100%;
-            top: 820px;
+            top: 52rem;
             left: 0;
-            height: 600px;
+            height: 40rem;
             background: linear-gradient(90deg, #94D3CD 50%, #2F295A 50%);
-            z-index: 2;
+            z-index: -1;
+            clip-path: polygon(0 0, 100% 4.5rem, 100% 100%, 0 100%);
         }
 
         .why-work-title {
@@ -1692,16 +1693,16 @@
         </div>
 
         <a href="#contact" class="cta-button">Let's work together</a>
-
+        
         <div class="compass">
             <img src="images/compass.png" alt="Compass">
         </div>
-
+        
         <div class="purple-strip"></div>
 
         <div class="moving-text-container">
             <div class="moving-text">
-                your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. • your go-to designer for branding that's bold, intentional, and true to you. •
+                your go-to designer for branding that's bold, intentional, and true to you • your go-to designer for branding that's bold, intentional, and true to you • your go-to designer for branding that's bold, intentional, and true to you • your go-to designer for branding that's bold, intentional, and true to you • 
             </div>
         </div>
         <!-- Why work together section with split background -->
