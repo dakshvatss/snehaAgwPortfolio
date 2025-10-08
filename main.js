@@ -1,104 +1,84 @@
-// Testimonials Slider
-class TestimonialsSlider {
+// Testimonials Navigation
+class TestimonialsNavigation {
     constructor() {
-        this.slider = document.getElementById('testimonialsSlider');
-        this.prevBtn = document.getElementById('prevBtn');
-        this.nextBtn = document.getElementById('nextBtn');
-        this.dots = document.querySelectorAll('.dot');
+        this.container = document.getElementById('testimonialsCards');
+        this.prevBtn = document.getElementById('testimonialPrevBtn');
+        this.nextBtn = document.getElementById('testimonialNextBtn');
         this.cards = document.querySelectorAll('.testimonial-card');
-        this.currentSlide = 0;
-        this.autoSlideInterval = null;
+        this.currentIndex = 0;
         
-        if (!this.slider) return;
+        if (!this.container || this.cards.length === 0) return;
         
         this.init();
     }
     
-    getVisibleCards() {
-        return window.innerWidth <= 1024 ? 1 : 2;
-    }
-    
-    getTotalSlides() {
-        return this.cards.length;
-    }
-    
-    updateSlider() {
-        const cardWidth = this.cards[0].offsetWidth;
-        const gap = 40;
-        const translateX = this.currentSlide * (cardWidth + gap);
-        
-        this.slider.style.transform = `translateX(-${translateX}px)`;
-        
-        // Update dots
-        this.dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentSlide);
-        });
-        
-        // Update button states
-        const visibleCards = this.getVisibleCards();
-        this.prevBtn.style.opacity = this.currentSlide === 0 ? '0.5' : '1';
-        this.nextBtn.style.opacity = this.currentSlide >= this.getTotalSlides() - visibleCards ? '0.5' : '1';
-    }
-    
-    nextSlide() {
-        const visibleCards = this.getVisibleCards();
-        if (this.currentSlide < this.getTotalSlides() - visibleCards) {
-            this.currentSlide++;
-            this.updateSlider();
-        }
-    }
-    
-    prevSlide() {
-        if (this.currentSlide > 0) {
-            this.currentSlide--;
-            this.updateSlider();
-        }
-    }
-    
-    goToSlide(index) {
-        this.currentSlide = index;
-        this.updateSlider();
-    }
-    
-    startAutoSlide() {
-        this.autoSlideInterval = setInterval(() => {
-            const visibleCards = this.getVisibleCards();
-            if (this.currentSlide >= this.getTotalSlides() - visibleCards) {
-                this.currentSlide = 0;
-            } else {
-                this.currentSlide++;
-            }
-            this.updateSlider();
-        }, 5000);
-    }
-    
-    stopAutoSlide() {
-        if (this.autoSlideInterval) {
-            clearInterval(this.autoSlideInterval);
-            this.autoSlideInterval = null;
-        }
-    }
-    
     init() {
-        // Button event listeners
-        this.nextBtn?.addEventListener('click', () => this.nextSlide());
-        this.prevBtn?.addEventListener('click', () => this.prevSlide());
+        this.updateVisibility();
+        this.updateButtons();
         
-        // Dot navigation
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
+        this.prevBtn?.addEventListener('click', () => {
+            if (this.currentIndex > 0) {
+                this.currentIndex--;
+                this.scrollToCard();
+            }
         });
         
-        // Auto-slide with pause on hover
-        this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
-        this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
+        this.nextBtn?.addEventListener('click', () => {
+            if (this.currentIndex < this.cards.length - 1) {
+                this.currentIndex++;
+                this.scrollToCard();
+            }
+        });
         
         // Handle window resize
-        window.addEventListener('resize', () => this.updateSlider());
+        window.addEventListener('resize', () => {
+            this.updateVisibility();
+            this.updateButtons();
+        });
+    }
+    
+    scrollToCard() {
+        this.updateVisibility();
+        this.updateButtons();
+    }
+    
+    updateVisibility() {
+        const isDesktop = window.innerWidth > 768;
         
-        // Initialize slider and auto-slide
-        this.updateSlider();
-        this.startAutoSlide();
+        if (isDesktop) {
+            // On desktop, show all cards (they display side-by-side via CSS)
+            this.cards.forEach(card => {
+                card.style.display = 'flex';
+            });
+        } else {
+            // On mobile/tablet, show only current card
+            this.cards.forEach((card, index) => {
+                card.style.display = index === this.currentIndex ? 'flex' : 'none';
+            });
+        }
+    }
+    
+    updateButtons() {
+        const isDesktop = window.innerWidth > 768;
+        
+        if (this.prevBtn) {
+            // Hide buttons on desktop if all cards fit, otherwise enable/disable based on index
+            if (isDesktop && this.cards.length <= 2) {
+                this.prevBtn.style.display = 'none';
+            } else {
+                this.prevBtn.style.display = 'flex';
+                this.prevBtn.disabled = this.currentIndex === 0;
+            }
+        }
+        
+        if (this.nextBtn) {
+            if (isDesktop && this.cards.length <= 2) {
+                this.nextBtn.style.display = 'none';
+            } else {
+                this.nextBtn.style.display = 'flex';
+                this.nextBtn.disabled = this.currentIndex >= this.cards.length - 1;
+            }
+        }
     }
 }
 
@@ -196,7 +176,7 @@ class SmoothScroll {
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    new TestimonialsSlider();
+    new TestimonialsNavigation();
     new ContactForm();
     new SmoothScroll();
 });
