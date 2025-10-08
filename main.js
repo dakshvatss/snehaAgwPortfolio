@@ -1,150 +1,202 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const slider = document.getElementById('testimonialsSlider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const dots = document.querySelectorAll('.dot');
-    const cards = document.querySelectorAll('.testimonial-card');
+// Testimonials Slider
+class TestimonialsSlider {
+    constructor() {
+        this.slider = document.getElementById('testimonialsSlider');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.dots = document.querySelectorAll('.dot');
+        this.cards = document.querySelectorAll('.testimonial-card');
+        this.currentSlide = 0;
+        this.autoSlideInterval = null;
+        
+        if (!this.slider) return;
+        
+        this.init();
+    }
     
-    let currentSlide = 0;
-    const totalSlides = cards.length;
-    
-    // Show only 2 cards at a time on larger screens, 1 on mobile
-    function getVisibleCards() {
+    getVisibleCards() {
         return window.innerWidth <= 1024 ? 1 : 2;
     }
     
-    function updateSlider() {
-        const visibleCards = getVisibleCards();
-        const cardWidth = cards[0].offsetWidth;
+    getTotalSlides() {
+        return this.cards.length;
+    }
+    
+    updateSlider() {
+        const cardWidth = this.cards[0].offsetWidth;
         const gap = 40;
-        const translateX = currentSlide * (cardWidth + gap);
+        const translateX = this.currentSlide * (cardWidth + gap);
         
-        slider.style.transform = `translateX(-${translateX}px)`;
+        this.slider.style.transform = `translateX(-${translateX}px)`;
         
         // Update dots
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentSlide);
+        this.dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === this.currentSlide);
         });
         
         // Update button states
-        prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentSlide >= totalSlides - visibleCards ? '0.5' : '1';
+        const visibleCards = this.getVisibleCards();
+        this.prevBtn.style.opacity = this.currentSlide === 0 ? '0.5' : '1';
+        this.nextBtn.style.opacity = this.currentSlide >= this.getTotalSlides() - visibleCards ? '0.5' : '1';
     }
     
-    function nextSlide() {
-        const visibleCards = getVisibleCards();
-        if (currentSlide < totalSlides - visibleCards) {
-            currentSlide++;
-            updateSlider();
+    nextSlide() {
+        const visibleCards = this.getVisibleCards();
+        if (this.currentSlide < this.getTotalSlides() - visibleCards) {
+            this.currentSlide++;
+            this.updateSlider();
         }
     }
     
-    function prevSlide() {
-        if (currentSlide > 0) {
-            currentSlide--;
-            updateSlider();
+    prevSlide() {
+        if (this.currentSlide > 0) {
+            this.currentSlide--;
+            this.updateSlider();
         }
     }
     
-    // Event listeners
-    nextBtn.addEventListener('click', nextSlide);
-    prevBtn.addEventListener('click', prevSlide);
+    goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlider();
+    }
     
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentSlide = index;
-            updateSlider();
-        });
-    });
-    
-    // Auto-slide functionality
-    let autoSlideInterval = setInterval(() => {
-        const visibleCards = getVisibleCards();
-        if (currentSlide >= totalSlides - visibleCards) {
-            currentSlide = 0;
-        } else {
-            currentSlide++;
-        }
-        updateSlider();
-    }, 5000);
-    
-    // Pause auto-slide on hover
-    slider.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-    });
-    
-    slider.addEventListener('mouseleave', () => {
-        autoSlideInterval = setInterval(() => {
-            const visibleCards = getVisibleCards();
-            if (currentSlide >= totalSlides - visibleCards) {
-                currentSlide = 0;
+    startAutoSlide() {
+        this.autoSlideInterval = setInterval(() => {
+            const visibleCards = this.getVisibleCards();
+            if (this.currentSlide >= this.getTotalSlides() - visibleCards) {
+                this.currentSlide = 0;
             } else {
-                currentSlide++;
+                this.currentSlide++;
             }
-            updateSlider();
+            this.updateSlider();
         }, 5000);
-    });
+    }
     
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        updateSlider();
-    });
+    stopAutoSlide() {
+        if (this.autoSlideInterval) {
+            clearInterval(this.autoSlideInterval);
+            this.autoSlideInterval = null;
+        }
+    }
     
-    // Initialize
-    updateSlider();
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
+    init() {
+        // Button event listeners
+        this.nextBtn?.addEventListener('click', () => this.nextSlide());
+        this.prevBtn?.addEventListener('click', () => this.prevSlide());
+        
+        // Dot navigation
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goToSlide(index));
+        });
+        
+        // Auto-slide with pause on hover
+        this.slider.addEventListener('mouseenter', () => this.stopAutoSlide());
+        this.slider.addEventListener('mouseleave', () => this.startAutoSlide());
+        
+        // Handle window resize
+        window.addEventListener('resize', () => this.updateSlider());
+        
+        // Initialize slider and auto-slide
+        this.updateSlider();
+        this.startAutoSlide();
+    }
+}
+
+// Contact Form Handler
+class ContactForm {
+    constructor() {
+        this.form = document.getElementById('contactForm');
+        this.nameInput = document.getElementById('name');
+        this.emailInput = document.getElementById('email');
+        this.submitBtn = document.querySelector('.submit-btn');
+        
+        if (!this.form) return;
+        
+        this.init();
+    }
     
-    contactForm.addEventListener('submit', function(e) {
+    validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
+    showError(message) {
+        alert(message);
+    }
+    
+    showSuccess(message) {
+        alert(message);
+    }
+    
+    async handleSubmit(e) {
         e.preventDefault();
         
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        const name = this.nameInput.value.trim();
+        const email = this.emailInput.value.trim();
         
-        // Basic form validation
-        if (!name.trim() || !email.trim()) {
-            alert('Please fill in all fields.');
+        // Validate inputs
+        if (!name || !email) {
+            this.showError('Please fill in all fields.');
             return;
         }
         
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address.');
+        if (!this.validateEmail(email)) {
+            this.showError('Please enter a valid email address.');
             return;
         }
+        
+        // Show loading state
+        const originalText = this.submitBtn.textContent;
+        this.submitBtn.textContent = 'Sending...';
+        this.submitBtn.disabled = true;
         
         // Simulate form submission
-        const submitBtn = document.querySelector('.submit-btn');
-        const originalText = submitBtn.textContent;
+        await new Promise(resolve => setTimeout(resolve, 1500));
         
-        submitBtn.textContent = 'Sending...';
-        submitBtn.disabled = true;
-        
-        // Simulate API call delay
-        setTimeout(() => {
-            alert('Thank you for your message! We\'ll get back to you soon.');
-            contactForm.reset();
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-        }, 1500);
-    });
+        // Show success and reset
+        this.showSuccess('Thank you for your message! We\'ll get back to you soon.');
+        this.form.reset();
+        this.submitBtn.textContent = originalText;
+        this.submitBtn.disabled = false;
+    }
     
-    // Add smooth scrolling for navigation links
-    const navLinks = document.querySelectorAll('nav a[href^="#"]');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
+    init() {
+        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+    }
+}
+
+// Smooth Scroll Navigation
+class SmoothScroll {
+    constructor() {
+        this.navLinks = document.querySelectorAll('nav a[href^="#"]');
+        this.init();
+    }
+    
+    scrollToTarget(targetId) {
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    }
+    
+    init() {
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                this.scrollToTarget(targetId);
+            });
         });
-    });
+    }
+}
+
+// Initialize all modules when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new TestimonialsSlider();
+    new ContactForm();
+    new SmoothScroll();
 });
