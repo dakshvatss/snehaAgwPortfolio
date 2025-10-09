@@ -1,3 +1,27 @@
+// Service Cards Expandable Functionality
+class ServiceExpander {
+    constructor() {
+        this.menuItems = document.querySelectorAll('[data-expandable]');
+        this.init();
+    }
+    
+    init() {
+        this.menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-expandable');
+                const targetContent = document.getElementById(targetId);
+                
+                if (targetContent) {
+                    const isExpanded = targetContent.classList.contains('expanded');
+                    
+                    targetContent.classList.toggle('expanded');
+                    item.classList.toggle('expanded');
+                }
+            });
+        });
+    }
+}
+
 // Testimonials Navigation
 class TestimonialsNavigation {
     constructor() {
@@ -6,6 +30,7 @@ class TestimonialsNavigation {
         this.nextBtn = document.getElementById('testimonialNextBtn');
         this.cards = document.querySelectorAll('.testimonial-card');
         this.currentIndex = 0;
+        this.autoScrollInterval = null;
         
         if (!this.container || this.cards.length === 0) return;
         
@@ -17,24 +42,48 @@ class TestimonialsNavigation {
         this.updateButtons();
         
         this.prevBtn?.addEventListener('click', () => {
+            this.stopAutoScroll();
             if (this.currentIndex > 0) {
                 this.currentIndex--;
                 this.scrollToCard();
             }
+            this.startAutoScroll();
         });
         
         this.nextBtn?.addEventListener('click', () => {
+            this.stopAutoScroll();
             if (this.currentIndex < this.cards.length - 1) {
                 this.currentIndex++;
-                this.scrollToCard();
+            } else {
+                this.currentIndex = 0;
             }
+            this.scrollToCard();
+            this.startAutoScroll();
         });
         
-        // Handle window resize
         window.addEventListener('resize', () => {
             this.updateVisibility();
             this.updateButtons();
         });
+        
+        this.startAutoScroll();
+    }
+    
+    startAutoScroll() {
+        this.autoScrollInterval = setInterval(() => {
+            if (this.currentIndex < this.cards.length - 1) {
+                this.currentIndex++;
+            } else {
+                this.currentIndex = 0;
+            }
+            this.scrollToCard();
+        }, 4000);
+    }
+    
+    stopAutoScroll() {
+        if (this.autoScrollInterval) {
+            clearInterval(this.autoScrollInterval);
+        }
     }
     
     scrollToCard() {
@@ -46,12 +95,10 @@ class TestimonialsNavigation {
         const isDesktop = window.innerWidth > 768;
         
         if (isDesktop) {
-            // On desktop, show all cards (they display side-by-side via CSS)
             this.cards.forEach(card => {
                 card.style.display = 'flex';
             });
         } else {
-            // On mobile/tablet, show only current card
             this.cards.forEach((card, index) => {
                 card.style.display = index === this.currentIndex ? 'flex' : 'none';
             });
@@ -62,7 +109,6 @@ class TestimonialsNavigation {
         const isDesktop = window.innerWidth > 768;
         
         if (this.prevBtn) {
-            // Hide buttons on desktop if all cards fit, otherwise enable/disable based on index
             if (isDesktop && this.cards.length <= 2) {
                 this.prevBtn.style.display = 'none';
             } else {
@@ -76,7 +122,7 @@ class TestimonialsNavigation {
                 this.nextBtn.style.display = 'none';
             } else {
                 this.nextBtn.style.display = 'flex';
-                this.nextBtn.disabled = this.currentIndex >= this.cards.length - 1;
+                this.nextBtn.disabled = false;
             }
         }
     }
@@ -176,6 +222,7 @@ class SmoothScroll {
 
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
+    new ServiceExpander();
     new TestimonialsNavigation();
     new ContactForm();
     new SmoothScroll();
