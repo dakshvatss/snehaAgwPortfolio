@@ -219,7 +219,7 @@ nav a:hover {
 /* Container */
 .container {
     position: relative;
-    min-height: calc(4800px + 100vw);
+    min-height: calc(4400px + 100vw);
 }
 
 /* Purple strip and moving text */
@@ -319,13 +319,12 @@ nav a:hover {
 
 /* Services Section - NOW FIRST */
 .services-section {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: 1420px;
-    left: 0;
+    margin-top: 1420px;
     background: #f8f9fa;
     padding: 180px 0 150px 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .services-decorative-strip {
@@ -697,12 +696,12 @@ nav a:hover {
 }
 
 /* Projects section - NOW SECOND */
+/* Projects section - NOW SECOND */
 .projects-section {
-    position: absolute;
+    position: relative;
     width: 100vw;
-    top: 3300px;
-    left: 0;
     background-color: #f5f5f5;
+    transition: all 0.3s ease;
 }
 
 .purple-line {
@@ -712,10 +711,8 @@ nav a:hover {
 }
 
 .projects-title {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: 20px;
-    left: 0;
     font-weight: 900;
     font-size: 44px;
     line-height: 72px;
@@ -736,16 +733,23 @@ nav a:hover {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 0;
-    position: absolute;
-    top: 112px;
-    left: 0;
+    position: relative;
     height: calc(100vw);
+    transition: height 0.4s ease;
 }
 
 .project-item {
     width: 100%;
     height: 100%;
     overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-item:hover {
+    transform: scale(1.02);
+    z-index: 5;
 }
 
 .project-item img {
@@ -753,14 +757,51 @@ nav a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: all 0.3s ease;
+}
+
+.project-item.expanded {
+    grid-column: 1 / -1;
+    height: auto;
+    min-height: 600px;
+}
+
+.project-item.expanded img {
+    height: auto;
+    max-height: none;
+}
+
+.project-details {
+    display: none;
+    padding: 40px;
+    background: white;
+    border-top: 3px solid #AE9EE9;
+}
+
+.project-item.expanded .project-details {
+    display: block;
+}
+
+.project-details h3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 900;
+    font-size: 36px;
+    color: #2F295A;
+    margin-bottom: 20px;
+}
+
+.project-details p {
+    font-family: 'Jost', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+    color: #2D2D2D;
 }
 
 /* Navigation Section - After Projects */
+/* Navigation Section - After Projects */
 .navigation-section {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: calc(3300px + 112px + 100vw);
-    left: 0;
     height: 350px;
     background-image: url('images/pretest.png');
     background-size: cover;
@@ -802,10 +843,8 @@ nav a:hover {
 
 /* Testimonials Section */
 .testimonials-section {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: calc(3300px + 112px + 100vw + 450px);
-    left: 0;
     background: #f8f9fa;
     padding: 80px 0 120px 0;
     z-index: 3;
@@ -933,10 +972,8 @@ nav a:hover {
 
 /* Contact Section */
 .contact-section {
-    position: absolute;
+    position: relative;
     width: 100%;
-    top: calc(3300px + 112px + 100vw + 1250px);
-    left: 0;
     background: #DFE97A;
     padding: 80px 0;
     z-index: 3;
@@ -1085,7 +1122,7 @@ nav a:hover {
 /* Tablets and Small Laptops */
 @media (max-width: 1366px) {
     .container {
-        min-height: calc(4600px + 100vw);
+        min-height: calc(4200px + 100vw);
     }
     
     .logo {
@@ -1203,15 +1240,14 @@ nav a:hover {
     }
 
     .services-section {
-        top: 1280px;
+        margin-top: 1280px;
     }
 
     .projects-section {
-        top: 3050px;
+        /* position: relative; - already set in main styles */
     }
 
     .navigation-section {
-        top: calc(3050px + 112px + 100vw);
         height: 300px;
         gap: 60px;
     }
@@ -1223,18 +1259,18 @@ nav a:hover {
     }
 
     .testimonials-section {
-        top: calc(3050px + 112px + 100vw + 400px);
+        /* position: relative; - already set in main styles */
     }
 
     .contact-section {
-        top: calc(3050px + 112px + 100vw + 1200px);
+        /* position: relative; - already set in main styles */
     }
 }
 
 /* Tablets */
 @media (max-width: 1024px) {
     .container {
-        min-height: calc(4500px + 100vw);
+        min-height: calc(4100px + 100vw);
     }
 
     .logo {
@@ -1368,15 +1404,14 @@ nav a:hover {
     }
 
     .services-section {
-        top: 1140px;
+        margin-top: 1140px;
     }
 
     .projects-section {
-        top: 2850px;
+        /* position: relative; - already set in main styles */
     }
 
     .navigation-section {
-        top: calc(2850px + 112px + 100vw);
         height: 280px;
         gap: 40px;
         flex-direction: row;
@@ -1391,11 +1426,11 @@ nav a:hover {
     }
 
     .testimonials-section {
-        top: calc(2850px + 112px + 100vw + 380px);
+        /* position: relative; - already set in main styles */
     }
 
     .contact-section {
-        top: calc(2850px + 112px + 100vw + 1180px);
+        /* position: relative; - already set in main styles */
     }
 
     .service-main-card {
@@ -1465,7 +1500,7 @@ nav a:hover {
 /* Large Mobile Devices / Small Tablets */
 @media (max-width: 768px) {
     .container {
-        min-height: calc(4400px + 150vh);
+        min-height: calc(4000px + 150vh);
     }
 
     .logo {
@@ -1625,12 +1660,12 @@ nav a:hover {
     }
 
     .services-section {
-        top: 1000px;
+        margin-top: 1000px;
         padding: 60px 20px 100px 20px;
     }
 
     .projects-section {
-        top: 2650px;
+        /* position: relative; - already set in main styles */
     }
 
     .projects-grid {
@@ -1645,7 +1680,6 @@ nav a:hover {
     }
 
     .navigation-section {
-        top: calc(2650px + 112px + 150vh);
         height: auto;
         min-height: 280px;
         flex-direction: column;
@@ -1662,11 +1696,10 @@ nav a:hover {
     }
 
     .testimonials-section {
-        top: calc(2650px + 112px + 150vh + 360px);
+        /* position: relative; - already set in main styles */
     }
 
     .contact-section {
-        top: calc(2650px + 112px + 150vh + 1160px);
         padding: 50px 0;
     }
 
@@ -1833,7 +1866,7 @@ nav a:hover {
 /* Mobile Devices */
 @media (max-width: 480px) {
     .container {
-        min-height: calc(4300px + 180vh);
+        min-height: calc(3900px + 180vh);
     }
 
     .logo {
@@ -1964,12 +1997,12 @@ nav a:hover {
     }
 
     .services-section {
-        top: 850px;
+        margin-top: 850px;
         padding: 40px 15px 80px 15px;
     }
 
     .projects-section {
-        top: 2400px;
+        /* position: relative; - already set in main styles */
     }
 
     .projects-grid {
@@ -1983,7 +2016,6 @@ nav a:hover {
     }
 
     .navigation-section {
-        top: calc(2400px + 112px + 180vh);
         height: auto;
         min-height: 320px;
         flex-direction: column;
@@ -2000,12 +2032,10 @@ nav a:hover {
     }
 
     .testimonials-section {
-        top: calc(2400px + 112px + 180vh + 400px);
         padding: 40px 0 80px 0;
     }
 
     .contact-section {
-        top: calc(2400px + 112px + 180vh + 1200px);
         padding: 40px 0;
     }
 

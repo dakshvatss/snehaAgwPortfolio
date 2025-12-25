@@ -22,6 +22,43 @@ class ServiceExpander {
     }
 }
 
+// Project Accordion Functionality
+class ProjectAccordion {
+    constructor() {
+        this.projectItems = document.querySelectorAll('.project-item');
+        this.currentExpanded = null;
+        
+        if (this.projectItems.length === 0) return;
+        
+        this.init();
+    }
+    
+    init() {
+        this.projectItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                this.toggleProject(item, index);
+            });
+        });
+    }
+    
+    toggleProject(item, index) {
+        const isExpanding = !item.classList.contains('expanded');
+        
+        // Close any currently expanded project
+        if (this.currentExpanded && this.currentExpanded !== item) {
+            this.currentExpanded.classList.remove('expanded');
+        }
+        
+        if (isExpanding) {
+            item.classList.add('expanded');
+            this.currentExpanded = item;
+        } else {
+            item.classList.remove('expanded');
+            this.currentExpanded = null;
+        }
+    }
+}
+
 // Testimonials Navigation
 class TestimonialsNavigation {
     constructor() {
@@ -223,6 +260,7 @@ class SmoothScroll {
 // Initialize all modules when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     new ServiceExpander();
+    new ProjectAccordion();
     new TestimonialsNavigation();
     new ContactForm();
     new SmoothScroll();
