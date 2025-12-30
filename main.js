@@ -60,6 +60,8 @@ class ProjectAccordion {
 }
 
 // Testimonials Navigation
+
+// Testimonials Navigation
 class TestimonialsNavigation {
     constructor() {
         this.container = document.getElementById('testimonialsCards');
@@ -75,15 +77,19 @@ class TestimonialsNavigation {
     }
     
     init() {
-        this.updateVisibility();
+        // Show initial cards immediately
+        this.showCard(this.currentIndex);
         this.updateButtons();
         
         this.prevBtn?.addEventListener('click', () => {
             this.stopAutoScroll();
             if (this.currentIndex > 0) {
                 this.currentIndex--;
-                this.scrollToCard();
+            } else {
+                this.currentIndex = this.cards.length - 1;
             }
+            this.showCard(this.currentIndex);
+            this.updateButtons();
             this.startAutoScroll();
         });
         
@@ -94,16 +100,39 @@ class TestimonialsNavigation {
             } else {
                 this.currentIndex = 0;
             }
-            this.scrollToCard();
+            this.showCard(this.currentIndex);
+            this.updateButtons();
             this.startAutoScroll();
         });
         
         window.addEventListener('resize', () => {
-            this.updateVisibility();
+            this.showCard(this.currentIndex);
             this.updateButtons();
         });
         
         this.startAutoScroll();
+    }
+    
+    showCard(index) {
+        const isDesktop = window.innerWidth > 768;
+        
+        // Remove active class from all cards
+        this.cards.forEach(card => card.classList.remove('active'));
+        
+        if (isDesktop) {
+            // Show two cards on desktop
+            if (index < this.cards.length - 1) {
+                this.cards[index].classList.add('active');
+                this.cards[index + 1].classList.add('active');
+            } else {
+                // If at last card, show last two
+                this.cards[index - 1].classList.add('active');
+                this.cards[index].classList.add('active');
+            }
+        } else {
+            // Show one card on mobile
+            this.cards[index].classList.add('active');
+        }
     }
     
     startAutoScroll() {
@@ -113,8 +142,9 @@ class TestimonialsNavigation {
             } else {
                 this.currentIndex = 0;
             }
-            this.scrollToCard();
-        }, 4000);
+            this.showCard(this.currentIndex);
+            this.updateButtons();
+        }, 5000);
     }
     
     stopAutoScroll() {
@@ -123,44 +153,13 @@ class TestimonialsNavigation {
         }
     }
     
-    scrollToCard() {
-        this.updateVisibility();
-        this.updateButtons();
-    }
-    
-    updateVisibility() {
-        const isDesktop = window.innerWidth > 768;
-        
-        if (isDesktop) {
-            this.cards.forEach(card => {
-                card.style.display = 'flex';
-            });
-        } else {
-            this.cards.forEach((card, index) => {
-                card.style.display = index === this.currentIndex ? 'flex' : 'none';
-            });
-        }
-    }
-    
     updateButtons() {
-        const isDesktop = window.innerWidth > 768;
-        
         if (this.prevBtn) {
-            if (isDesktop && this.cards.length <= 2) {
-                this.prevBtn.style.display = 'none';
-            } else {
-                this.prevBtn.style.display = 'flex';
-                this.prevBtn.disabled = this.currentIndex === 0;
-            }
+            this.prevBtn.disabled = false;
         }
         
         if (this.nextBtn) {
-            if (isDesktop && this.cards.length <= 2) {
-                this.nextBtn.style.display = 'none';
-            } else {
-                this.nextBtn.style.display = 'flex';
-                this.nextBtn.disabled = false;
-            }
+            this.nextBtn.disabled = false;
         }
     }
 }
