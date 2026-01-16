@@ -1247,42 +1247,8 @@ nav a:hover {
 }
 
 /* ===============================================
-   MOBILE RESPONSIVE STYLES
+   MOBILE RESPONSIVE STYLES - SPECIFIC CORRECTIONS
    =============================================== */
-
-/* Tablet and below */
-@media (max-width: 1024px) {
-  /* Container adjustments */
-  .container {
-    min-height: auto;
-  }
-
-  /* Logo */
-  .logo {
-    width: 8rem;
-    height: 5rem;
-    left: 2rem;
-    top: 2rem;
-  }
-
-  /* Designs text - hide on mobile */
-  .designs-text {
-    display: none;
-  }
-
-  /* Navigation - hamburger menu placeholder */
-  nav {
-    right: 2rem;
-    top: 2rem;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav a {
-    font-size: 24px;
-    line-height: 40px;
-  }
-}
 
 /* Mobile styles */
 @media (max-width: 768px) {
@@ -1305,7 +1271,7 @@ nav a:hover {
     display: none;
   }
 
-  /* Add hamburger menu styling if needed */
+  /* Add hamburger menu styling */
   nav::before {
     content: "MENU";
     display: block;
@@ -1362,7 +1328,7 @@ nav a:hover {
     padding: 0 20px;
   }
 
-  /* Features - single column */
+  /* FIX 1: Center-align value proposition text as a group */
   .features {
     position: relative;
     width: 90%;
@@ -1373,12 +1339,12 @@ nav a:hover {
     gap: 8px;
     font-size: 13px;
     line-height: 24px;
-    text-align: left;
+    text-align: center;
     padding: 0 20px;
   }
 
   .feature-item {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .feature-icon {
@@ -1386,7 +1352,7 @@ nav a:hover {
     margin-right: 8px;
   }
 
-  /* CTA Button */
+  /* CTA Button - adjusted position to prevent overlap with purple strip */
   .cta-button {
     top: 620px;
     width: 260px;
@@ -1407,15 +1373,15 @@ nav a:hover {
     height: 5rem;
   }
 
-  /* Purple strip and moving text */
+  /* FIX 2 & 3: Purple strip positioning - prevent overlap and remove white gap */
   .purple-strip {
-    top: 770px;
+    top: 800px;
     height: 3rem;
     left: -20rem;
   }
 
   .moving-text-container {
-    top: 770px;
+    top: 800px;
     height: 3rem;
     left: -20rem;
   }
@@ -1426,11 +1392,11 @@ nav a:hover {
     font-size: 1.2rem;
   }
 
-  /* Why work together section */
+  /* FIX 3: Why work together section - remove gap with purple strip */
   .why-work-section {
     position: relative;
     top: auto;
-    margin-top: 750px;
+    margin-top: 780px;
     height: auto;
     background: linear-gradient(180deg, #94D3CD 0%, #94D3CD 45%, #2F295A 45%, #2F295A 100%);
     clip-path: none;
@@ -1467,118 +1433,13 @@ nav a:hover {
     padding: 0 10px;
   }
 
-  /* Services Section */
+  /* Services Section - NO CHANGES (FIX 4) */
   .services-section {
     margin-top: 100px;
     padding: 120px 0 80px 0;
   }
 
-  .services-decorative-strip {
-    height: 100px;
-  }
-
-  .services-decorative-strip h2 {
-    margin-top: 15px;
-  }
-
-  .services-sun-icon {
-    width: 120px;
-    height: 120px;
-    left: 20px;
-    top: -60px;
-  }
-
-  .services-title {
-    font-size: 32px;
-    line-height: 48px;
-    margin-bottom: 40px;
-  }
-
-  .services-main-cards {
-    padding: 0 20px;
-    gap: 24px;
-  }
-
-  .service-main-card {
-    flex-direction: column;
-    padding: 28px 24px;
-    gap: 24px;
-    border-radius: 24px;
-  }
-
-  .service-content-left {
-    max-width: 100%;
-    gap: 16px;
-  }
-
-  .service-card-title {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  .service-card-description {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .service-content-right {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .menu-label {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .menu-arrow {
-    font-size: 20px;
-  }
-
-  /* Addon packages label */
-  .addon-packages-label {
-    margin: 40px auto 24px auto;
-    padding: 0 20px;
-  }
-
-  .addon-text {
-    font-size: 32px;
-    line-height: 24px;
-  }
-
-  /* Addon cards - single column */
-  .services-addon-cards {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 0 20px;
-  }
-
-  .service-addon-card {
-    padding: 24px;
-    gap: 16px;
-    border-radius: 16px;
-  }
-
-  .addon-card-title {
-    font-size: 28px;
-    line-height: 32px;
-  }
-
-  .addon-card-description {
-    font-size: 16px;
-    line-height: 22px;
-  }
-
-  .addon-menu-label {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .addon-menu-arrow {
-    font-size: 18px;
-  }
-
-  /* Projects Section */
+  /* FIX 5: Projects Section - Show only top 3 projects */
   .projects-section {
     margin-top: 60px;
   }
@@ -1609,6 +1470,11 @@ nav a:hover {
     height: 300px;
   }
 
+  /* Show only first 3 projects */
+  .project-item:nth-child(n+4) {
+    display: none;
+  }
+
   .project-name {
     bottom: 20px;
     padding: 10px 40px;
@@ -1634,7 +1500,7 @@ nav a:hover {
     min-width: 0;
   }
 
-  /* Testimonials Section */
+  /* FIX 6: Testimonials Section - Horizontal navigation buttons */
   .testimonials-section {
     padding: 60px 0 80px 0;
   }
@@ -1646,8 +1512,10 @@ nav a:hover {
   }
 
   .testimonials-container {
-    flex-direction: column;
-    gap: 24px;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
     padding: 0 20px;
   }
 
@@ -1655,6 +1523,7 @@ nav a:hover {
     width: 100%;
     min-height: auto;
     gap: 0;
+    flex: 1;
   }
 
   .testimonial-card {
@@ -1681,38 +1550,26 @@ nav a:hover {
     line-height: 24px;
   }
 
+  /* Navigation buttons - horizontal placement */
   .testimonial-nav-btn {
-    position: static;
-    margin: 0 auto;
+    flex-shrink: 0;
+  }
+
+  .prev-btn {
+    order: 1;
+  }
+
+  .testimonials-cards {
+    order: 2;
+  }
+
+  .next-btn {
+    order: 3;
   }
 
   .testimonial-nav-btn img {
     width: 40px;
     height: 40px;
-  }
-
-  /* Show navigation buttons in a row on mobile */
-  .testimonials-container {
-    flex-direction: column;
-  }
-
-  .prev-btn,
-  .next-btn {
-    order: 2;
-  }
-
-  .testimonials-cards {
-    order: 1;
-  }
-
-  /* Navigation buttons row */
-  .testimonials-container::after {
-    content: '';
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    width: 100%;
-    order: 3;
   }
 
   /* Contact Section */
@@ -1817,14 +1674,14 @@ nav a:hover {
     line-height: 20px;
   }
 
-  .service-card-title,
-  .addon-card-title {
-    font-size: 24px;
-    line-height: 28px;
-  }
-
   .testimonial-card {
     min-height: 380px;
     padding: 20px;
+  }
+
+  /* Smaller navigation arrows on very small screens */
+  .testimonial-nav-btn img {
+    width: 32px;
+    height: 32px;
   }
 }
