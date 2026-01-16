@@ -1475,7 +1475,7 @@ nav a:hover {
   }
 
   .services-section {
-    margin-top: -3vh;
+    margin-top: -3.1vh;
     padding: 120px 0 80px 0;
     margin-bottom: 0;
   }
@@ -1587,7 +1587,7 @@ nav a:hover {
   }
 
   .projects-section {
-    margin-top: 0;
+    margin-top: -9vh;
     width: 100vw;
     overflow: hidden;
   }
@@ -1599,10 +1599,10 @@ nav a:hover {
   }
 
   .projects-camera-icon {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
     left: 20px;
-    top: -50px;
+    top: -30px;
   }
 
   .projects-title {
