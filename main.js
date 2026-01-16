@@ -12,8 +12,6 @@ class ServiceExpander {
                 const targetContent = document.getElementById(targetId);
                 
                 if (targetContent) {
-                    const isExpanded = targetContent.classList.contains('expanded');
-                    
                     targetContent.classList.toggle('expanded');
                     item.classList.toggle('expanded');
                 }
@@ -58,8 +56,6 @@ class ProjectAccordion {
         }
     }
 }
-
-// Testimonials Navigation
 
 // Testimonials Navigation
 class TestimonialsNavigation {
@@ -230,7 +226,7 @@ class ContactForm {
 // Smooth Scroll Navigation
 class SmoothScroll {
     constructor() {
-        this.navLinks = document.querySelectorAll('nav a[href^="#"]');
+        this.navLinks = document.querySelectorAll('nav a[href^="#"], .nav-button[href^="#"]');
         this.init();
     }
     
