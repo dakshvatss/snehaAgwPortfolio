@@ -1171,1144 +1171,7 @@ nav a:hover {
     transform: translateY(0);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN - MEDIA QUERIES
-   ======================================== */
 
-/* Tablets and Small Laptops */
-@media (max-width: 1366px) {
-    .container {
-        min-height: calc(4200px + 100vw);
-    }
-    
-    .logo {
-        width: 12rem;
-        height: 6rem;
-        left: 2.5rem;
-        top: 2rem;
-    }
-
-    .designs-text {
-        width: 180px;
-        right: 40px;
-        top: 70px;
-        font-size: 32px;
-    }
-
-    nav {
-        right: 40px;
-        top: 130px;
-        gap: 30px;
-    }
-
-    nav a {
-        font-size: 28px;
-        line-height: 56px;
-    }
-
-    .welcome-text h1 {
-        font-size: 52px;
-        width: 300px;
-        left: calc(50% - 150px);
-        top: 300px;
-    }
-
-    .paper-plane {
-        width: 130px;
-        height: 133px;
-        left: calc(50% - 280px);
-        top: 250px;
-    }
-
-    .brand-bg {
-        width: 700px;
-        left: calc(50% - 350px);
-        top: 360px;
-    }
-
-    .brand-text {
-        width: 600px;
-        left: calc(50% - 300px);
-        top: 380px;
-    }
-
-    .tagline {
-        top: 480px;
-        font-size: 16px;
-        width: 700px;
-        left: calc(50% - 350px);
-    }
-
-    .features {
-        top: 540px;
-        width: 650px;
-        left: calc(50% - 325px);
-        font-size: 14px;
-    }
-
-    .cta-button {
-        top: 640px;
-    }
-
-    .compass {
-        right: 5rem;
-        top: 42rem;
-        width: 8rem;
-        height: 8rem;
-    }
-
-    .compass img {
-        width: 6rem;
-        height: 6rem;
-    }
-
-    .purple-strip,
-    .moving-text-container {
-        width: 200rem;
-        left: -30rem;
-        top: 50rem;
-    }
-
-    .why-work-section {
-        top: 48rem;
-        min-height: 35rem;
-    }
-
-    .why-work-title {
-        font-size: 48px;
-        width: 320px;
-        left: calc(50% - 160px - 290px);
-        top: 90px;
-    }
-
-    .brand-together-title {
-        font-size: 85px;
-        width: 420px;
-        left: calc(50% - 210px - 290px);
-        top: 200px;
-    }
-
-    .why-work-description {
-        font-size: 18px;
-        width: 390px;
-        left: calc(50% - 195px - 280px);
-        top: 300px;
-    }
-
-    .services-section {
-        margin-top: 1280px;
-    }
-
-    .projects-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .navigation-section {
-        height: 300px;
-        gap: 60px;
-    }
-
-    .nav-button {
-        font-size: 24px;
-        padding: 18px 50px;
-        min-width: 240px;
-    }
-
-    .testimonials-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .contact-section {
-        /* position: relative; - already set in main styles */
-    }
-}
-
-/* Tablets */
-@media (max-width: 1024px) {
-    .container {
-        min-height: calc(4100px + 100vw);
-    }
-
-    .logo {
-        width: 10rem;
-        height: 5rem;
-        left: 2rem;
-        top: 1.5rem;
-    }
-
-    .designs-text {
-        width: 160px;
-        right: 30px;
-        top: 60px;
-        font-size: 28px;
-    }
-
-    nav {
-        right: 30px;
-        top: 110px;
-        gap: 20px;
-    }
-
-    nav a {
-        font-size: 24px;
-        line-height: 48px;
-    }
-
-    .welcome-text h1 {
-        font-size: 44px;
-        width: 260px;
-        left: calc(50% - 130px);
-        top: 260px;
-    }
-
-    .paper-plane {
-        width: 110px;
-        height: 113px;
-        left: calc(50% - 250px);
-        top: 210px;
-    }
-
-    .brand-bg {
-        width: 600px;
-        left: calc(50% - 300px);
-        top: 320px;
-    }
-
-    .brand-text {
-        width: 500px;
-        left: calc(50% - 250px);
-        top: 340px;
-    }
-
-    .tagline {
-        top: 420px;
-        font-size: 15px;
-        width: 90%;
-        max-width: 600px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .features {
-        top: 490px;
-        width: 90%;
-        max-width: 550px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 13px;
-        gap: 10px;
-    }
-
-    .cta-button {
-        top: 600px;
-        width: 250px;
-        padding: 18px 40px;
-        font-size: 15px;
-    }
-
-    .compass {
-        right: 3rem;
-        top: 36rem;
-        width: 7rem;
-        height: 7rem;
-    }
-
-    .compass img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .purple-strip,
-    .moving-text-container {
-        width: 180rem;
-        left: -25rem;
-        top: 42rem;
-        height: 3.5rem;
-    }
-
-    .moving-text {
-        font-size: 1.4rem;
-        height: 3.5rem;
-        line-height: 3.5rem;
-    }
-
-    .why-work-section {
-        top: 40rem;
-        min-height: 32rem;
-    }
-
-    .why-work-title {
-        font-size: 42px;
-        width: 300px;
-        left: calc(50% - 150px - 250px);
-        top: 90px;
-    }
-
-    .brand-together-title {
-        font-size: 72px;
-        width: 380px;
-        left: calc(50% - 190px - 250px);
-        top: 180px;
-    }
-
-    .why-work-description {
-        font-size: 17px;
-        width: 360px;
-        left: calc(50% - 180px - 240px);
-        top: 270px;
-        line-height: 22px;
-    }
-
-    .services-section {
-        margin-top: 1140px;
-    }
-
-    .projects-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .navigation-section {
-        height: 280px;
-        gap: 40px;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 30px;
-    }
-
-    .nav-button {
-        font-size: 22px;
-        padding: 16px 40px;
-        min-width: 220px;
-    }
-
-    .testimonials-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .contact-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .service-main-card {
-        flex-direction: column;
-        gap: 24px;
-        padding: 30px;
-    }
-
-    .service-content-left {
-        max-width: 100%;
-    }
-
-    .service-content-right {
-        width: 100%;
-    }
-
-    .testimonials-container {
-        flex-direction: column;
-        gap: 30px;
-        padding: 0 20px;
-    }
-
-    .testimonials-cards {
-        justify-content: center;
-    }
-
-    .testimonial-nav-btn {
-        display: none;
-    }
-
-    .testimonial-card {
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .contact-container {
-        flex-direction: column;
-        gap: 50px;
-        padding: 0 30px;
-        text-align: center;
-    }
-
-    .contact-left,
-    .contact-right {
-        max-width: 100%;
-        width: 100%;
-    }
-
-    .paper-plane-contact {
-        position: static;
-        transform: none;
-        margin: 30px auto;
-        width: 100px;
-        height: 100px;
-    }
-
-    .social-links {
-        justify-content: center;
-        margin-top: 40px;
-    }
-
-    .submit-btn {
-        align-self: center;
-    }
-}
-
-/* Large Mobile Devices / Small Tablets */
-@media (max-width: 768px) {
-    .container {
-        min-height: calc(4000px + 150vh);
-    }
-
-    .logo {
-        width: 8rem;
-        height: 4rem;
-        left: 1.5rem;
-        top: 1.5rem;
-    }
-
-    .designs-text {
-        display: none;
-    }
-
-    nav {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        left: auto;
-        gap: 15px;
-        flex-direction: column;
-        align-items: flex-end;
-    }
-
-    nav a {
-        font-size: 18px;
-        line-height: 32px;
-    }
-
-    .welcome-text h1 {
-        font-size: 36px;
-        width: 220px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 180px;
-    }
-
-    .paper-plane {
-        width: 80px;
-        height: 83px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 120px;
-    }
-
-    .brand-bg {
-        width: 90%;
-        max-width: 450px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 240px;
-        height: 100px;
-    }
-
-    .brand-text {
-        width: 85%;
-        max-width: 400px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 255px;
-        height: 70px;
-    }
-
-    .tagline {
-        top: 350px;
-        font-size: 13px;
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 0 15px;
-        line-height: 24px;
-    }
-
-    .features {
-        top: 410px;
-        width: 90%;
-        left: 50%;
-        transform: translateX(-50%);
-        grid-template-columns: 1fr;
-        gap: 8px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .feature-item {
-        justify-content: center;
-    }
-
-    .cta-button {
-        top: 540px;
-        width: 220px;
-        padding: 16px 30px;
-        font-size: 14px;
-        height: auto;
-    }
-
-    .compass {
-        right: 2rem;
-        top: 30rem;
-        width: 6rem;
-        height: 6rem;
-    }
-
-    .compass img {
-        width: 4.5rem;
-        height: 4.5rem;
-    }
-
-    .purple-strip,
-    .moving-text-container {
-        width: 150rem;
-        left: -20rem;
-        top: 35rem;
-        height: 3rem;
-    }
-
-    .moving-text {
-        font-size: 1.2rem;
-        height: 3rem;
-        line-height: 3rem;
-    }
-
-    .why-work-section {
-        top: 33rem;
-        min-height: 28rem;
-        background: linear-gradient(180deg, #94D3CD 0%, #2F295A 100%);
-        clip-path: polygon(0 0, 100% 3rem, 100% 100%, 0 100%);
-    }
-
-    .why-work-title {
-        font-size: 32px;
-        width: 90%;
-        max-width: 280px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 70px;
-        line-height: 40px;
-    }
-
-    .brand-together-title {
-        font-size: 56px;
-        width: 90%;
-        max-width: 300px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 140px;
-        line-height: 50px;
-    }
-
-    .why-work-description {
-        font-size: 15px;
-        width: 90%;
-        max-width: 320px;
-        left: 50%;
-        transform: translateX(-50%);
-        top: 220px;
-        line-height: 20px;
-    }
-
-    .services-section {
-        margin-top: 1000px;
-        padding: 60px 20px 100px 20px;
-    }
-
-    .projects-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(8, 1fr);
-        height: calc(150vh);
-    }
-
-    .projects-title {
-        font-size: 32px;
-        padding: 15px 10px;
-    }
-
-    .navigation-section {
-        height: auto;
-        min-height: 280px;
-        flex-direction: column;
-        gap: 20px;
-        padding: 40px 20px;
-    }
-
-    .nav-button {
-        font-size: 20px;
-        padding: 16px 40px;
-        min-width: 200px;
-        width: 90%;
-        max-width: 320px;
-    }
-
-    .testimonials-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .contact-section {
-        padding: 50px 0;
-    }
-
-    .services-decorative-strip {
-        height: 80px;
-    }
-
-    .services-sun-icon {
-        width: 120px;
-        height: 120px;
-        transform: translateX(150px);
-        top: 20px;
-    }
-
-    .services-title {
-        font-size: 32px;
-        line-height: 48px;
-        margin-bottom: 50px;
-    }
-
-    .services-main-cards {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .service-main-card {
-        flex-direction: column;
-        padding: 30px;
-        gap: 30px;
-    }
-
-    .service-content-left {
-        max-width: 100%;
-    }
-
-    .service-card-title {
-        font-size: 32px;
-        line-height: 36px;
-    }
-
-    .service-card-description {
-        font-size: 18px;
-        line-height: 24px;
-    }
-
-    .service-content-right {
-        width: 100%;
-        min-width: auto;
-    }
-
-    .menu-label {
-        font-size: 18px;
-    }
-
-    .addon-packages-label {
-        margin: 50px auto 30px auto;
-    }
-
-    .addon-text {
-        font-size: 32px;
-    }
-
-    .services-addon-cards {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding: 0 15px;
-    }
-
-    .addon-card-title {
-        font-size: 32px;
-        line-height: 36px;
-    }
-
-    .addon-card-description {
-        font-size: 18px;
-        line-height: 24px;
-    }
-
-    .testimonials-title {
-        font-size: 32px;
-        line-height: 48px;
-        margin-bottom: 30px;
-    }
-
-    .testimonials-container {
-        flex-direction: column;
-        gap: 30px;
-        max-width: 100%;
-    }
-
-    .testimonials-cards {
-        flex-direction: column;
-        gap: 30px;
-        width: 100%;
-    }
-
-    .testimonial-card {
-        width: 100%;
-        height: auto;
-        min-height: 350px;
-        padding: 24px 32px;
-        gap: 40px;
-    }
-
-    .testimonial-text {
-        font-size: 18px;
-        line-height: 24px;
-    }
-
-    .client-name {
-        font-size: 18px;
-        line-height: 26px;
-    }
-
-    .client-project {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .testimonial-nav-btn {
-        display: none;
-    }
-
-    .contact-container {
-        padding: 0 20px;
-        gap: 40px;
-    }
-
-    .contact-title {
-        font-size: 32px;
-        line-height: 38px;
-        margin-bottom: 20px;
-    }
-
-    .contact-description {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
-    .form-group input {
-        padding: 16px 20px;
-        font-size: 15px;
-    }
-
-    .submit-btn {
-        padding: 15px 35px;
-        font-size: 15px;
-        width: 100%;
-        max-width: 250px;
-    }
-
-    .social-link {
-        width: 50px;
-        height: 50px;
-    }
-
-    .social-link svg {
-        width: 32px;
-        height: 32px;
-    }
-}
-
-/* Mobile Devices */
-@media (max-width: 480px) {
-    .container {
-        min-height: calc(3900px + 180vh);
-    }
-
-    .logo {
-        width: 7rem;
-        height: 3.5rem;
-        left: 1rem;
-        top: 1rem;
-    }
-
-    nav {
-        top: 1rem;
-        right: 1rem;
-        gap: 10px;
-    }
-
-    nav a {
-        font-size: 16px;
-        line-height: 28px;
-    }
-
-    .welcome-text h1 {
-        font-size: 28px;
-        width: 180px;
-        top: 140px;
-        line-height: 34px;
-    }
-
-    .paper-plane {
-        width: 60px;
-        height: 63px;
-        top: 90px;
-    }
-
-    .brand-bg {
-        width: 95%;
-        max-width: 350px;
-        top: 190px;
-        height: 80px;
-    }
-
-    .brand-text {
-        width: 90%;
-        max-width: 320px;
-        top: 200px;
-        height: 60px;
-    }
-
-    .tagline {
-        top: 280px;
-        font-size: 11px;
-        width: 95%;
-        line-height: 20px;
-        padding: 0 10px;
-    }
-
-    .features {
-        top: 340px;
-        width: 95%;
-        font-size: 11px;
-        gap: 6px;
-    }
-
-    .feature-icon {
-        font-size: 16px;
-    }
-
-    .cta-button {
-        top: 460px;
-        width: 200px;
-        padding: 14px 25px;
-        font-size: 13px;
-    }
-
-    .compass {
-        right: 1rem;
-        top: 26rem;
-        width: 5rem;
-        height: 5rem;
-    }
-
-    .compass img {
-        width: 3.5rem;
-        height: 3.5rem;
-    }
-
-    .purple-strip,
-    .moving-text-container {
-        width: 120rem;
-        left: -15rem;
-        top: 30rem;
-        height: 2.5rem;
-    }
-
-    .moving-text {
-        font-size: 1rem;
-        height: 2.5rem;
-        line-height: 2.5rem;
-    }
-
-    .why-work-section {
-        top: 28.5rem;
-        min-height: 25rem;
-        clip-path: polygon(0 0, 100% 2.5rem, 100% 100%, 0 100%);
-    }
-
-    .why-work-title {
-        font-size: 26px;
-        width: 95%;
-        max-width: 240px;
-        top: 60px;
-        line-height: 32px;
-    }
-
-    .brand-together-title {
-        font-size: 44px;
-        width: 95%;
-        max-width: 260px;
-        top: 120px;
-        line-height: 42px;
-    }
-
-    .why-work-description {
-        font-size: 13px;
-        width: 95%;
-        max-width: 280px;
-        top: 190px;
-        line-height: 18px;
-    }
-
-    .services-section {
-        margin-top: 850px;
-        padding: 40px 15px 80px 15px;
-    }
-
-    .projects-section {
-        /* position: relative; - already set in main styles */
-    }
-
-    .projects-grid {
-        height: calc(180vh);
-    }
-
-    .projects-title {
-        font-size: 24px;
-        line-height: 48px;
-        padding: 10px;
-    }
-
-    .navigation-section {
-        height: auto;
-        min-height: 320px;
-        flex-direction: column;
-        gap: 16px;
-        padding: 40px 15px;
-    }
-
-    .nav-button {
-        font-size: 18px;
-        padding: 14px 35px;
-        min-width: 180px;
-        width: 95%;
-        max-width: 280px;
-    }
-
-    .testimonials-section {
-        padding: 40px 0 80px 0;
-    }
-
-    .contact-section {
-        padding: 40px 0;
-    }
-
-    .services-decorative-strip {
-        height: 60px;
-    }
-
-    .services-sun-icon {
-        width: 80px;
-        height: 80px;
-        transform: translateX(80px);
-        top: 10px;
-    }
-
-    .services-title {
-        font-size: 26px;
-        line-height: 36px;
-        margin-bottom: 30px;
-    }
-
-    .services-main-cards {
-        gap: 25px;
-        padding: 0 10px;
-    }
-
-    .service-main-card {
-        padding: 20px;
-        gap: 20px;
-        border-radius: 24px;
-    }
-
-    .service-card-title {
-        font-size: 24px;
-        line-height: 28px;
-    }
-
-    .service-card-description {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .menu-label {
-        font-size: 16px;
-    }
-
-    .addon-packages-label {
-        margin: 40px auto 25px auto;
-    }
-
-    .addon-text {
-        font-size: 26px;
-        line-height: 24px;
-    }
-
-    .services-addon-cards {
-        gap: 25px;
-        padding: 0 10px;
-    }
-
-    .service-addon-card {
-        padding: 24px;
-    }
-
-    .addon-card-title {
-        font-size: 28px;
-        line-height: 32px;
-    }
-
-    .addon-card-description {
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .addon-menu-label {
-        font-size: 14px;
-    }
-
-    .testimonials-title {
-        font-size: 26px;
-        line-height: 36px;
-        margin-bottom: 30px;
-    }
-
-    .testimonial-card {
-        min-height: 320px;
-        padding: 20px 28px;
-        gap: 30px;
-    }
-
-    .testimonial-text {
-        font-size: 16px;
-        line-height: 22px;
-    }
-
-    .client-name {
-        font-size: 16px;
-        line-height: 24px;
-    }
-
-    .client-project {
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .contact-container {
-        padding: 0 15px;
-        gap: 30px;
-    }
-
-    .contact-title {
-        font-size: 24px;
-        line-height: 30px;
-    }
-
-    .contact-description {
-        font-size: 14px;
-        line-height: 20px;
-        margin-bottom: 30px;
-    }
-
-    .paper-plane-contact {
-        width: 80px;
-        height: 80px;
-    }
-
-    .form-group input {
-        padding: 14px 18px;
-        font-size: 14px;
-    }
-
-    .submit-btn {
-        padding: 14px 30px;
-        font-size: 14px;
-        width: 100%;
-    }
-
-    .social-links {
-        gap: 15px;
-    }
-
-    .social-link {
-        width: 45px;
-        height: 45px;
-    }
-
-    .social-link svg {
-        width: 28px;
-        height: 28px;
-    }
-}
-
-/* Extra Small Mobile Devices */
-@media (max-width: 375px) {
-    .welcome-text h1 {
-        font-size: 24px;
-        width: 160px;
-    }
-
-    .brand-bg,
-    .brand-text {
-        width: 100%;
-        left: 0;
-        transform: none;
-        padding: 0 10px;
-    }
-
-    .tagline {
-        font-size: 10px;
-    }
-
-    .features {
-        font-size: 10px;
-    }
-
-    nav a {
-        font-size: 14px;
-        line-height: 24px;
-    }
-}
-
-/* Very Small Mobile Devices */
-@media (max-width: 320px) {
-    .logo {
-        width: 6rem;
-        height: 3rem;
-    }
-
-    .welcome-text h1 {
-        font-size: 22px;
-        width: 140px;
-        line-height: 28px;
-    }
-
-    .cta-button {
-        width: 180px;
-        padding: 12px 20px;
-        font-size: 12px;
-    }
-
-    .why-work-title {
-        font-size: 22px;
-        line-height: 28px;
-    }
-
-    .brand-together-title {
-        font-size: 36px;
-        line-height: 36px;
-    }
-
-    .services-title {
-        font-size: 22px;
-    }
-
-    .testimonials-title {
-        font-size: 20px;
-    }
-}
 /* New testimonial card colors */
 .testimonial-card.teal-card {
     background: #94D3CD;
@@ -2354,35 +1217,7 @@ nav a:hover {
     display: flex;
 }
 
-/* Desktop: show 2 cards at a time */
-@media (min-width: 769px) {
-    .testimonials-cards {
-        position: relative;
-        width: 100%;
-        min-height: 497px;
-    }
-    
-    .testimonials-cards .testimonial-card {
-        position: absolute;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none;
-    }
-    
-    .testimonials-cards .testimonial-card.active {
-        display: flex;
-        opacity: 1;
-        pointer-events: auto;
-    }
-    
-    .testimonials-cards .testimonial-card:first-child.active {
-        left: 0;
-    }
-    
-    .testimonials-cards .testimonial-card:nth-child(2).active {
-        right: 0;
-    }
-}
+
 /* Carousel functionality - hide cards except current */
 .testimonials-cards {
     position: relative;
@@ -2400,21 +1235,8 @@ nav a:hover {
     display: flex;
 }
 
-/* Desktop: show 2 cards at a time */
-@media (min-width: 769px) {
-    .testimonials-cards .testimonial-card.active {
-        position: relative;
-        opacity: 1;
-    }
-}
 
-/* Mobile: show 1 card at a time */
-@media (max-width: 768px) {
-    .testimonials-cards {
-        flex-direction: column;
-        min-height: 350px;
-    }
-}
+
 /* Testimonials Carousel - Active State */
 .testimonials-cards .testimonial-card {
     display: none;
@@ -2424,10 +1246,585 @@ nav a:hover {
     display: flex;
 }
 
-/* Desktop: show cards side by side */
-@media (min-width: 769px) {
-    .testimonials-cards {
-        display: flex;
-        gap: 48px;
-    }
+/* ===============================================
+   MOBILE RESPONSIVE STYLES
+   =============================================== */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+  /* Container adjustments */
+  .container {
+    min-height: auto;
+  }
+
+  /* Logo */
+  .logo {
+    width: 8rem;
+    height: 5rem;
+    left: 2rem;
+    top: 2rem;
+  }
+
+  /* Designs text - hide on mobile */
+  .designs-text {
+    display: none;
+  }
+
+  /* Navigation - hamburger menu placeholder */
+  nav {
+    right: 2rem;
+    top: 2rem;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav a {
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Logo */
+  .logo {
+    width: 6rem;
+    height: 4rem;
+    left: 1.5rem;
+    top: 1.5rem;
+  }
+
+  /* Navigation - show menu icon */
+  nav {
+    right: 1.5rem;
+    top: 1.5rem;
+    gap: 0;
+  }
+
+  nav a {
+    display: none;
+  }
+
+  /* Add hamburger menu styling if needed */
+  nav::before {
+    content: "MENU";
+    display: block;
+    font-weight: 600;
+    font-size: 16px;
+    color: #2F295A;
+    padding: 8px 16px;
+    border: 2px solid #2F295A;
+    border-radius: 20px;
+  }
+
+  /* Hero section - stack vertically */
+  .paper-plane {
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 120px;
+  }
+
+  .welcome-text h1 {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 240px;
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .brand-bg {
+    width: 90%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 290px;
+  }
+
+  .brand-text {
+    width: 85%;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 305px;
+  }
+
+  /* Tagline */
+  .tagline {
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 390px;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 20px;
+  }
+
+  /* Features - single column */
+  .features {
+    position: relative;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 460px;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 13px;
+    line-height: 24px;
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .feature-item {
+    justify-content: flex-start;
+  }
+
+  .feature-icon {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  /* CTA Button */
+  .cta-button {
+    top: 620px;
+    width: 260px;
+    padding: 16px 40px;
+    font-size: 14px;
+  }
+
+  /* Compass - reposition */
+  .compass {
+    width: 6rem;
+    height: 6rem;
+    right: 2rem;
+    top: 720px;
+  }
+
+  .compass img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* Purple strip and moving text */
+  .purple-strip {
+    top: 770px;
+    height: 3rem;
+    left: -20rem;
+  }
+
+  .moving-text-container {
+    top: 770px;
+    height: 3rem;
+    left: -20rem;
+  }
+
+  .moving-text {
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1.2rem;
+  }
+
+  /* Why work together section */
+  .why-work-section {
+    position: relative;
+    top: auto;
+    margin-top: 750px;
+    height: auto;
+    background: linear-gradient(180deg, #94D3CD 0%, #94D3CD 45%, #2F295A 45%, #2F295A 100%);
+    clip-path: none;
+    padding: 60px 20px 80px 20px;
+  }
+
+  .why-work-title {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 20px;
+  }
+
+  .brand-together-title {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: 60px;
+    line-height: 50px;
+    margin-bottom: 30px;
+  }
+
+  .why-work-description {
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 0 10px;
+  }
+
+  /* Services Section */
+  .services-section {
+    margin-top: 100px;
+    padding: 120px 0 80px 0;
+  }
+
+  .services-decorative-strip {
+    height: 100px;
+  }
+
+  .services-decorative-strip h2 {
+    margin-top: 15px;
+  }
+
+  .services-sun-icon {
+    width: 120px;
+    height: 120px;
+    left: 20px;
+    top: -60px;
+  }
+
+  .services-title {
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+
+  .services-main-cards {
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .service-main-card {
+    flex-direction: column;
+    padding: 28px 24px;
+    gap: 24px;
+    border-radius: 24px;
+  }
+
+  .service-content-left {
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .service-card-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .service-card-description {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .service-content-right {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .menu-label {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .menu-arrow {
+    font-size: 20px;
+  }
+
+  /* Addon packages label */
+  .addon-packages-label {
+    margin: 40px auto 24px auto;
+    padding: 0 20px;
+  }
+
+  .addon-text {
+    font-size: 32px;
+    line-height: 24px;
+  }
+
+  /* Addon cards - single column */
+  .services-addon-cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .service-addon-card {
+    padding: 24px;
+    gap: 16px;
+    border-radius: 16px;
+  }
+
+  .addon-card-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .addon-card-description {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .addon-menu-label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .addon-menu-arrow {
+    font-size: 18px;
+  }
+
+  /* Projects Section */
+  .projects-section {
+    margin-top: 60px;
+  }
+
+  .projects-title-wrapper {
+    padding: 15px 0;
+  }
+
+  .projects-camera-icon {
+    width: 100px;
+    height: 100px;
+    left: 20px;
+    top: -50px;
+  }
+
+  .projects-title {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    height: auto;
+  }
+
+  .project-item {
+    height: 300px;
+  }
+
+  .project-name {
+    bottom: 20px;
+    padding: 10px 40px;
+    font-size: 16px;
+    line-height: 22px;
+    opacity: 1;
+  }
+
+  /* Navigation Section */
+  .navigation-section {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .nav-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 40px;
+    font-size: 20px;
+    line-height: 28px;
+    min-width: 0;
+  }
+
+  /* Testimonials Section */
+  .testimonials-section {
+    padding: 60px 0 80px 0;
+  }
+
+  .testimonials-title {
+    font-size: 32px;
+    line-height: 48px;
+    margin-bottom: 40px;
+  }
+
+  .testimonials-container {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .testimonials-cards {
+    width: 100%;
+    min-height: auto;
+    gap: 0;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 400px;
+    padding: 24px;
+    gap: 32px;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .client-name {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .client-project {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  .testimonial-nav-btn {
+    position: static;
+    margin: 0 auto;
+  }
+
+  .testimonial-nav-btn img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Show navigation buttons in a row on mobile */
+  .testimonials-container {
+    flex-direction: column;
+  }
+
+  .prev-btn,
+  .next-btn {
+    order: 2;
+  }
+
+  .testimonials-cards {
+    order: 1;
+  }
+
+  /* Navigation buttons row */
+  .testimonials-container::after {
+    content: '';
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    order: 3;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 40px;
+  }
+
+  .contact-left {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .contact-title {
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 16px;
+  }
+
+  .contact-description {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+
+  .social-links {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .social-link {
+    width: 55px;
+    height: 55px;
+  }
+
+  .social-link svg {
+    width: 55px;
+    height: 55px;
+  }
+
+  .paper-plane-contact {
+    display: none;
+  }
+
+  .contact-right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .contact-form {
+    gap: 16px;
+  }
+
+  .form-group input {
+    padding: 14px 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .submit-btn {
+    align-self: center;
+    padding: 16px 48px;
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 240px;
+  }
+}
+
+/* Extra small mobile devices */
+@media (max-width: 375px) {
+  .logo {
+    width: 5rem;
+    height: 3.5rem;
+    left: 1rem;
+    top: 1rem;
+  }
+
+  nav {
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .welcome-text h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .features {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .service-card-title,
+  .addon-card-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .testimonial-card {
+    min-height: 380px;
+    padding: 20px;
+  }
 }
