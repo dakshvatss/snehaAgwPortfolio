@@ -1,0 +1,315 @@
+/* Project Page Specific Styles */
+
+.project-page {
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+/* Ensure logo and nav are visible */
+body .logo,
+body .designs-text,
+body nav {
+    position: absolute;
+    z-index: 100;
+}
+
+/* Project Hero Section */
+.project-hero {
+    position: relative;
+    width: 100%;
+    background: #AE9EE9;
+    padding: 60px 0 40px 0;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.project-sun-icon {
+    position: absolute;
+    width: 192px;
+    height: 192px;
+    left: calc(50% - 580px);
+    top: -100px;
+    z-index: 2;
+}
+
+.project-sun-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.project-hero-title {
+    font-family: 'Jost', sans-serif;
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 54px;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+    color: #2F295A;
+    margin: 0;
+}
+
+/* Project Content Section */
+.project-content {
+    position: relative;
+    width: 100%;
+    background: #f8f9fa;
+    padding: 80px 0 0 0;
+}
+
+.project-content-label {
+    position: relative;
+    width: 100%;
+    max-width: 657px;
+    height: 37px;
+    margin: 0 auto 60px auto;
+    font-family: 'Jost', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #2F295A;
+}
+
+/* Project Buttons */
+.project-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px auto 80px auto;
+    max-width: 1200px;
+    padding: 0 80px;
+}
+
+.button-group-right {
+    display: flex;
+    gap: 24px;
+}
+
+.project-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 40px;
+    height: 64px;
+    background: #FFFFFF;
+    border: 2px solid #2F295A;
+    border-radius: 50px;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #2F295A;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.project-button:hover {
+    background: #2F295A;
+    color: #FFFFFF;
+}
+
+.project-button:hover svg {
+    color: #FFFFFF;
+}
+
+.instagram-button {
+    min-width: 220px;
+}
+
+.instagram-button svg {
+    width: 24px;
+    height: 24px;
+    color: #2F295A;
+    transition: color 0.3s ease;
+}
+
+.category-button {
+    min-width: 180px;
+}
+
+.project-image-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.project-main-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Navigation Section - Same as index.html */
+.navigation-section {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    background-image: url('images/pretest.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    padding: 0 40px;
+    z-index: 3;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 60px;
+    background: #FFFFFF;
+    border: 3px solid #2F295A;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #2F295A;
+    transition: all 0.3s ease;
+    min-width: 280px;
+    text-align: center;
+}
+
+.nav-button:hover {
+    background: #2F295A;
+    color: #FFFFFF;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(47, 41, 90, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .project-hero {
+        padding: 50px 0 30px 0;
+        margin-top: 120px;
+    }
+
+    .project-sun-icon {
+        width: 120px;
+        height: 120px;
+        left: 20px;
+        top: -60px;
+    }
+
+    .project-hero-title {
+        font-size: 32px;
+        line-height: 40px;
+        padding: 0 20px;
+    }
+
+    .project-content {
+        padding: 60px 0 0 0;
+    }
+
+    .project-content-label {
+        width: 90%;
+        max-width: 90%;
+        left: 0;
+        margin: 0 auto 40px auto;
+        font-size: 16px;
+        line-height: 28px;
+        height: auto;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+        gap: 16px;
+        margin: 60px auto 0 auto;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 20px 80px 20px;
+    }
+
+    .project-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 14px 32px;
+        height: 56px;
+        font-size: 16px;
+    }
+
+    .instagram-button,
+    .category-button {
+        min-width: 0;
+    }
+
+    .project-image-container {
+        padding: 0;
+    }
+
+    .navigation-section {
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 40px 20px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-button {
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 40px;
+        font-size: 20px;
+        line-height: 28px;
+        min-width: 0;
+    }
+
+    .project-main-image {
+        border-radius: 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .project-hero-title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .project-content-label {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .project-button {
+        font-size: 14px;
+        padding: 12px 24px;
+        height: 52px;
+    }
+}
+
+  @media (max-width: 768px) {
+.navigation-section {
+    height: auto;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    margin: 0;
+    width: 100%;
+  }
+
+
+  .nav-button {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 40px;
+    font-size: 20px;
+    line-height: 28px;
+    min-width: 0;
+  }
+  }

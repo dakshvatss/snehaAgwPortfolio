@@ -638,17 +638,7 @@ nav a:hover {
     margin: 4px 0;
 }
 
-.service-expandable-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 12px;
-}
-
-.service-expandable-content.expanded {
-    max-height: 500px;
-    padding: 16px 12px;
-}
+d
 
 .service-package-list {
     list-style: none;
